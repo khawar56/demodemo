@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CIKM DEMO</title>
+    {% load static %}
+    <meta property="og:title" content="CIKM DEMO" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Open Sans;
+        font-size: 1rem;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.625;
+        color: var(--dl-color-secondary-400);
+        background-color: var(--dl-color-gray-white);
+
+      }
+
+    /* Material Design styles */
+    .material-select {
+        position: relative;
+        display: inline-block;
+        /* margin-bottom: 20px; */
+      }
+
+      .material-select select {
+        padding: 10px 5px 10px 10px; /* Adjust the padding to make space for the icon */
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 4px;
+        background-color: transparent;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        color: #333;
+        outline: none;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add the shadow effect */
+        margin-bottom: -20px;
+      }
+
+      .home-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3a416f;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .home-button:hover {
+      transform: scale(1.20);
+    }
+
+    .text {
+       
+        background-color: transparent;
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        color: #333;
+    }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap"
+      data-tag="font"
+    />
+    <style>
+      html * {
+          -webkit-font-smoothing: antialiased;
+      }
+      input::placeholder, textarea::placeholder {
+         color: #d2d6da;
+      }
+    </style>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  </head>
+  <body>
+    <div>
+      
+      <div class="home-container">
+        <div class="home-hero">
+          <div class="home-container01">
+            <div class="home-card">
+              <h1 class="home-text HeadingOne">AVAH</h1>
+              <h1 class="home-text01 HeadingOne">Tag Line&nbsp;</h1>
+              <span class="home-text02">
+                write in couple of lines about the project write in couple of lines about the project write in couple of lines&nbsp;
+              </span>
+              <div class="home-container02">
+                <div class="home-container03"></div>
+              </div>
+              <div class="home-container04">
+                <img
+                  alt="image"
+                  src="{% static 'images/mu.jpg-600w.png' %}"
+                  class="home-image"
+                />
+                <img
+                  alt="image"
+                  src = "{% static 'images/nsf-600w.png' %}"            
+                  class="home-image01"
+                />
+                <img
+                  alt="image"
+                  src="{% static 'images/cloudlab-500h.png' %}"
+                  class="home-image02"
+                />
+                <img
+                  alt="image"
+                  src="{% static 'images/fabric-600w.png' %}"
+                  class="home-image03"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img alt="image" src="{% static 'images/bg-800h.jpg' %}" class="home-image04" />
+        
+         
+        <div class="material-select">
+        <form method="post">
+        {% csrf_token %}
+        <section class="home-features">
+          <div class="home-container05">
+            <img alt="image" src="{% static 'images/cube1.svg' %}" class="home-image05" />
+            <h5 class="home-text03 HeadingThree">Choose Site</h5>
+            <div data-thq="thq-dropdown" class="home-thq-dropdown list-item">
+              <select name="site" id = "site" class="home-button button">
+                <option class="home-dropdown1 list-item" value="CloudLab">Cloud Lab</option>
+                <option class="home-dropdown1 list-item" value="Fabric">Fabric</option>
+              </select>
+            </div>
+          </div>
+          <div class="home-container06">
+            <img alt="image" src="{% static 'images/person1.svg' %}" class="home-image06" />
+            <h5 class="home-text10 HeadingThree">Select Genome</h5>
+            <div data-thq="thq-dropdown" class="home-thq-dropdown1 list-item">
+              <select name="genome" id = "genome" class="home-button button">
+                <option class="home-dropdown1 list-item" value="ERR016314">ERR016314</option>
+                <option class="home-dropdown1 list-item" value="ERR068392">ERR068392</option>
+                <option class="home-dropdown1 list-item" value="ERR062979">ERR062979</option>
+                <option class="home-dropdown1 list-item" value="Fabric">ERR062973</option>
+                <option class="home-dropdown1 list-item" value="CloudLab">ERR062967</option>
+                <option class="home-dropdown1 list-item" value="Fabric">ERR062966</option>
+                <option class="home-dropdown1 list-item" value="CloudLab">ERR062959</option>
+                <option class="home-dropdown1 list-item" value="Fabric">ERR062953</option>
+                <option class="home-dropdown1 list-item" value="CloudLab">ERR062947</option>
+              </select>
+            </div>
+          </div>
+          <div class="home-container07">
+            <img
+              alt="image"
+              src="{% static 'images/options-200h.png' %}"
+              class="home-image07"
+            />
+            <h5 class="home-text14 HeadingThree">Choose Pipeline</h5>
+            <div data-thq="thq-dropdown" class="home-thq-dropdown2 list-item">
+              <select name="command" id = "command" class="home-button button">
+                <optgroup label="Cluster"></optgroup>
+                <option value="gpuHigh">GPUs Highest Priority</option>
+                <option value="cpu">Only CPUs</option>
+                <option value="gpu">With GPUs</option>
+                <option value="gpuLow">GPUs Lowest Priority</option>
+                <optgroup label="Single Node"></optgroup>
+                <option value="xx">Example Command 1</option>
+                <option value="yy">Example Command 2</option>
+                <option value="zz">Example Command 3</option>
+              </select>
+            </div>
+          </div>
+          <div class="home-container08">
+            <img alt="image" src="{% static 'images/rocket1.svg' %}" class="home-image08" />
+            <h5 class="home-text16 HeadingThree">Submit</h5>
+            <input type="submit" value="Submit" class="home-button button text">
+            <!-- <button type="submit" class="home-button button">Submit</button> -->
+          </div>
+    
+          <div class="home-container09">
+            <img alt="image" src="{% static 'images/upload.svg' %}" class="home-image09" />
+            <h5 class="home-text17">
+              <span class="HeadingThree">Upload Genome</span>
+            </h5>
+            <button type="button" disabled="" class="home-button1 button">
+              Select Genome
+            </button>
+          </div>
+        </section>
+      </form>
+      </div>
+      
+
+        <footer class="footer-footer">
+          <div class="footer-container">
+            <div class="footer-container1">
+              <span class="footer-text">Scalable Data Science Lab</span>
+              <span>University of Missouri</span>
+            </div>
+            <div class="footer-container2">
+              <div class="footer-container3">
+                <span class="footer-text02 Large">Company</span>
+                <span class="footer-text03 Large">About Us</span>
+                <span class="footer-text04 Large">Careers</span>
+                <span class="footer-text05 Large">Press</span>
+              </div>
+              <div class="footer-container4">
+                <span class="footer-text06 Large">Pages</span>
+                <span class="footer-text07 Large">Login</span>
+                <span class="footer-text08 Large">Register</span>
+                <span class="footer-text09 Large">About</span>
+              </div>
+              <div class="footer-container5">
+                <span class="footer-text10 Large">Products</span>
+                <span class="footer-text11 Large">Free</span>
+                <span class="footer-text12 Large">PRO</span>
+                <span class="footer-text13 Large">Latest</span>
+              </div>
+            </div>
+          </div>
+          <img alt="image" src="{% static 'images/waves-white.svg' %}" class="footer-image" />
+        </footer>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>
